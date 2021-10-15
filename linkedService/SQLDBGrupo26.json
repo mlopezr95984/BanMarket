@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=ean-tarea-edwh-grupo26.database.windows.net;initial catalog=ean-db-grupo26;user id=admin_gr26",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiYmJlYTZjYy1lZDgyLTRjNmQtYjgwNy1jNzU1ODBlMDAxODUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=ean-tarea-edwh-grupo26.database.windows.net;initial catalog=ean-db-grupo26;user id=admin-grupo26",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjMzMyZTNlZS05ZDhhLTRhY2EtODBjYy04ZTAzMTcyYWE1MjUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
