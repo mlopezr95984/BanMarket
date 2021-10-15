@@ -1,0 +1,49 @@
+{
+	"name": "AzureSqlDimCliente",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDBGrupo26",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Cliente_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Nombre",
+				"type": "varchar"
+			},
+			{
+				"name": "Apellido",
+				"type": "varchar"
+			},
+			{
+				"name": "Segmento",
+				"type": "varchar"
+			},
+			{
+				"name": "Pais",
+				"type": "varchar"
+			},
+			{
+				"name": "Estado",
+				"type": "varchar"
+			},
+			{
+				"name": "Ciudad",
+				"type": "varchar"
+			},
+			{
+				"name": "Cod_Postal",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DIM_CLIENTE"
+		}
+	}
+}
