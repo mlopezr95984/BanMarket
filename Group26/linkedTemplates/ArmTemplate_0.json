@@ -555,7 +555,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_exa')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_hkd')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -565,129 +565,10 @@
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Cliente_ID",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Nombre",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Apellido",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Segmento",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Pais",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Estado",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Ciudad",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Cod_Postal",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					}
-				],
+				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "DIM_CLIENTE"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SQLDBGrupo26')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_r44')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SQLDBGrupo26",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Cliente_ID",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Nombre",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Apellido",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Segmento",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Pais",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Estado",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Ciudad",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Cod_Postal",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "DIM_CLIENTE"
+					"schema": "Clientes",
+					"table": "File system file"
 				}
 			},
 			"dependsOn": [
@@ -762,6 +643,50 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/SQLDBGrupo26')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_5ge')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "FileServer202",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "FileServerLocation",
+						"fileName": "Clientes.csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Cliente ID",
+						"type": "String"
+					},
+					{
+						"name": "Nombre",
+						"type": "String"
+					},
+					{
+						"name": "Apellido",
+						"type": "String"
+					},
+					{
+						"name": "Segmento",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/FileServer202')]"
 			]
 		}
 	]

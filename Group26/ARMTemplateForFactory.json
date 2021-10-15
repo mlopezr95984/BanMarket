@@ -264,6 +264,134 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/CopyPipeline_hkd')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy_hkd",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "/Clientes.csv"
+							},
+							{
+								"name": "Destination",
+								"value": "Clientes"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "FileServerReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings",
+									"skipLineCount": 0
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate"
+							},
+							"enableStaging": false,
+							"validateDataConsistency": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Cliente ID",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Cliente ID",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nombre",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Nombre",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Apellido",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Apellido",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Segmento",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "Segmento",
+											"type": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_hkd",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DestinationDataset_hkd",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_hkd')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_hkd')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Copypipcliente02')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -413,313 +541,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Pipeline2_ClientID')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy_exa",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "/li_customer_clientes.csv"
-							},
-							{
-								"name": "Destination",
-								"value": "dbo.DIM_CLIENTE"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "FileServerReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings",
-									"skipLineCount": 0
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "linkedService202",
-									"type": "LinkedServiceReference"
-								}
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "ClenteID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Cliente_ID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Pais",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Pais",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Estado",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Estado",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Ciudad",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Ciudad",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Cod_Postal",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Cod_Postal",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceDataset_exa",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlDimCliente",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Fuentes"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_exa')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlDimCliente')]",
-				"[concat(variables('factoryId'), '/linkedServices/linkedService202')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Pipeline_ClienteID')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy_r44",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "/Clientes.csv"
-							},
-							{
-								"name": "Destination",
-								"value": "dbo.DIM_CLIENTE"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "FileServerReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings",
-									"skipLineCount": 0
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "linkedService202",
-									"type": "LinkedServiceReference"
-								}
-							},
-							"enableSkipIncompatibleRow": true,
-							"logSettings": {
-								"enableCopyActivityLog": true,
-								"copyActivityLogSettings": {
-									"logLevel": "Warning",
-									"enableReliableLogging": false
-								},
-								"logLocationSettings": {
-									"linkedServiceName": {
-										"referenceName": "linkedService203",
-										"type": "LinkedServiceReference"
-									}
-								}
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Cliente ID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Cliente_ID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Nombre",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Nombre",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Apellido",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Apellido",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Segmento",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Segmento",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceDataset_r44",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlDimCliente",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Fuentes"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_r44')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlDimCliente')]",
-				"[concat(variables('factoryId'), '/linkedServices/linkedService202')]",
-				"[concat(variables('factoryId'), '/linkedServices/linkedService203')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlDimCliente')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -844,7 +665,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_exa')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_hkd')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -854,129 +675,10 @@
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Cliente_ID",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Nombre",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Apellido",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Segmento",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Pais",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Estado",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Ciudad",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Cod_Postal",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					}
-				],
+				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "DIM_CLIENTE"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SQLDBGrupo26')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_r44')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SQLDBGrupo26",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Cliente_ID",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Nombre",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Apellido",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Segmento",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Pais",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Estado",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Ciudad",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "Cod_Postal",
-						"type": "varchar",
-						"precision": 0,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "DIM_CLIENTE"
+					"schema": "Clientes",
+					"table": "File system file"
 				}
 			},
 			"dependsOn": [
@@ -1098,59 +800,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_exa')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "FileServer202",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "FileServerLocation",
-						"fileName": "li_customer_clientes.csv"
-					},
-					"columnDelimiter": ";",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "ClenteID",
-						"type": "String"
-					},
-					{
-						"name": "Pais",
-						"type": "String"
-					},
-					{
-						"name": "Ciudad",
-						"type": "String"
-					},
-					{
-						"name": "Estado",
-						"type": "String"
-					},
-					{
-						"name": "Cod_Postal",
-						"type": "String"
-					},
-					{
-						"name": "RegionID",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/FileServer202')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_r44')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_hkd')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
