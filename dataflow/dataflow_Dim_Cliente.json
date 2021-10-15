@@ -1,0 +1,31 @@
+{
+	"name": "dataflow_Dim_Cliente",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DestinationDataset_r44",
+						"type": "DatasetReference"
+					},
+					"name": "Tabla1CliendID"
+				},
+				{
+					"dataset": {
+						"referenceName": "DestinationDataset_exa",
+						"type": "DatasetReference"
+					},
+					"name": "Tabla2ClienteID"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "Join1"
+				}
+			],
+			"script": "source(output(\n\t\tCliente_ID as string,\n\t\tNombre as string,\n\t\tApellido as string,\n\t\tSegmento as string,\n\t\tPais as string,\n\t\tEstado as string,\n\t\tCiudad as string,\n\t\tCod_Postal as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Tabla1CliendID\nsource(output(\n\t\tCliente_ID as string,\n\t\tNombre as string,\n\t\tApellido as string,\n\t\tSegmento as string,\n\t\tPais as string,\n\t\tEstado as string,\n\t\tCiudad as string,\n\t\tCod_Postal as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Tabla2ClienteID\nTabla1CliendID, Tabla2ClienteID join(Tabla1CliendID@Cliente_ID == Tabla2ClienteID@Cliente_ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1"
+		}
+	}
+}
