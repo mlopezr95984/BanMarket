@@ -125,7 +125,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_r44",
+						"referenceName": "AzureSqlDimCliente",
 						"type": "DatasetReference"
 					}
 				]
