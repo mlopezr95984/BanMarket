@@ -21,7 +21,7 @@
 			],
 			"sinks": [],
 			"transformations": [],
-			"script": "source(output(\n\t\t{Cliente ID} as string,\n\t\tNombre as string,\n\t\tApellido as string,\n\t\tSegmento as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource(output(\n\t\tCliente_ID as string,\n\t\tNombre as string,\n\t\tApellido as string,\n\t\tSegmento as string,\n\t\tPais as string,\n\t\tEstado as string,\n\t\tCiudad as string,\n\t\tCod_Postal as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source2"
+			"script": "parameters{\n\tparameter1 as string\n}\nsource(output(\n\t\t{Cliente ID} as string,\n\t\tNombre as string,\n\t\tApellido as string,\n\t\tSegmento as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource(output(\n\t\tCliente_ID as string,\n\t\tNombre as string,\n\t\tApellido as string,\n\t\tSegmento as string,\n\t\tPais as string,\n\t\tEstado as string,\n\t\tCiudad as string,\n\t\tCod_Postal as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source2"
 		}
 	}
 }
