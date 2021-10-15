@@ -7,7 +7,7 @@
 		"typeProperties": {
 			"host": "C:\\Users\\milop\\Documents\\Maestria_BI\\DWH",
 			"userId": "milop",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxOTNmNmJkOS02ZDc4LTQyOGYtOTI2Mi05ODQ1MmQ5MTExMzgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyZWUzOTQxYi0yNTU1LTQ4ZGMtYWIyYi1lYzEwOTQxYTUyZjUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
