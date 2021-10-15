@@ -1,0 +1,18 @@
+{
+	"name": "AFS_101",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Test AFS",
+		"annotations": [],
+		"type": "AzureFileStorage",
+		"typeProperties": {
+			"host": "C:\\[Users\\milop\\Documents\\Maestria_BI\\DWH]",
+			"userId": "Azure\\grupo26almacenamiento",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1YzI1Y2NjMy1iMWM1LTQ5MGYtYmRhMC04OTUyN2M4ZjM0MWUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

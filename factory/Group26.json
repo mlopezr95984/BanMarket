@@ -1,0 +1,9 @@
+{
+	"name": "Group26",
+	"location": "northcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fc7d65fc-9d8f-4f4d-aed8-f105fef0bd7b",
+		"tenantId": "c06fb559-1b68-4b84-a14f-47d0d837a5ab"
+	}
+}

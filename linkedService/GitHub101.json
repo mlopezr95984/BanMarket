@@ -1,0 +1,16 @@
+{
+	"name": "GitHub101",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "GitHub",
+		"typeProperties": {
+			"username": "mlopezr95984",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwZDNmYmNiNy1mZmVjLTRhYjEtYjNkNC00NTRmMGJiN2Y5NDciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

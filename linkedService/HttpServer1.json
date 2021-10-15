@@ -1,0 +1,19 @@
+{
+	"name": "HttpServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/mlopezr95984/BanMarket/blob/main",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Basic",
+			"userName": "admin-grupo26",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5MWQ4MWI0My0zYWVlLTQ5NmQtYjEyMi03YWNiNmE5ZDMwN2QiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

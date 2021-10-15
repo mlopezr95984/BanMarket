@@ -1,0 +1,7 @@
+{
+	"name": "Milop",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "My Computer"
+	}
+}
