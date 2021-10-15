@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "Clientes",
-			"table": "File system file"
+			"table": ""
 		}
 	}
 }
