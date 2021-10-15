@@ -20,7 +20,7 @@
 					},
 					{
 						"name": "Destination",
-						"value": "Clientes.File system file"
+						"value": "Clientes"
 					}
 				],
 				"typeProperties": {
