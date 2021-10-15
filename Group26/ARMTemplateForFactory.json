@@ -427,7 +427,7 @@
 					}
 				],
 				"typeProperties": {
-					"schema": "Test",
+					"schema": "dbo",
 					"table": "DIM_CLIENTE"
 				}
 			},
