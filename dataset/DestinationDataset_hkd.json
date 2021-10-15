@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_hkd",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDBGrupo26",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Clientes",
+			"table": "File system file"
+		}
+	}
+}
