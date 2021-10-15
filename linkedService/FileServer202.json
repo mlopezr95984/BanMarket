@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "C:\\[Users\\milop\\Documents\\Maestria_BI\\DWH]",
+			"host": "C:\\Users\\milop\\Documents\\Maestria_BI\\DWH",
 			"userId": "milop",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzMTMxNzJjMC01ZjcwLTRiNGQtOWQxMi04ODEyY2ZmMTY0ZWIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhOWE0MTYyOS01NDllLTQxNWEtYTQ0NS05OWJiYmY0YTY3M2EiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
