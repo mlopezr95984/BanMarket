@@ -108,7 +108,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_5ge",
+						"referenceName": "AzureSqlDimCliente",
 						"type": "DatasetReference"
 					}
 				]
