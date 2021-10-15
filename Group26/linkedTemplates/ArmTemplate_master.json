@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AFS_101'"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
 		"FileServer151021_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'FileServer151021'"
@@ -180,9 +184,6 @@
 					"linkedService203_connectionString": {
 						"value": "[parameters('linkedService203_connectionString')]"
 					},
-					"FileServer151021_password": {
-						"value": "[parameters('FileServer151021_password')]"
-					},
 					"AFS_101_properties_typeProperties_host": {
 						"value": "[parameters('AFS_101_properties_typeProperties_host')]"
 					},
@@ -227,12 +228,6 @@
 					},
 					"Web1_properties_typeProperties_url": {
 						"value": "[parameters('Web1_properties_typeProperties_url')]"
-					},
-					"FileServer151021_properties_typeProperties_host": {
-						"value": "[parameters('FileServer151021_properties_typeProperties_host')]"
-					},
-					"FileServer151021_properties_typeProperties_userId": {
-						"value": "[parameters('FileServer151021_properties_typeProperties_userId')]"
 					}
 				}
 			},
@@ -252,8 +247,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"FileServer151021_password": {
+						"value": "[parameters('FileServer151021_password')]"
+					},
 					"Master_BI_EDWH_connectionString": {
 						"value": "[parameters('Master_BI_EDWH_connectionString')]"
+					},
+					"FileServer151021_properties_typeProperties_host": {
+						"value": "[parameters('FileServer151021_properties_typeProperties_host')]"
+					},
+					"FileServer151021_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer151021_properties_typeProperties_userId')]"
 					}
 				}
 			},

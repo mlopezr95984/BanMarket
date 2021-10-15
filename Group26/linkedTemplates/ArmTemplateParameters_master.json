@@ -8,6 +8,9 @@
 		"AFS_101_password": {
 			"value": ""
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"FileServer151021_password": {
 			"value": ""
 		},
