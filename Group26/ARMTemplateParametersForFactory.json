@@ -1,0 +1,96 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Group26"
+		},
+		"AFS_101_password": {
+			"value": ""
+		},
+		"FileServer151021_password": {
+			"value": ""
+		},
+		"FileServer202_password": {
+			"value": ""
+		},
+		"GitHub101_credential": {
+			"value": ""
+		},
+		"GitHubBanmaket_password": {
+			"value": ""
+		},
+		"HttpServer1_password": {
+			"value": ""
+		},
+		"HttpServer2_password": {
+			"value": ""
+		},
+		"HttpServer4_password": {
+			"value": ""
+		},
+		"Master_BI_EDWH_connectionString": {
+			"value": ""
+		},
+		"SQLDBGrupo26_connectionString": {
+			"value": ""
+		},
+		"linkedService202_connectionString": {
+			"value": ""
+		},
+		"linkedService203_connectionString": {
+			"value": ""
+		},
+		"AFS_101_properties_typeProperties_host": {
+			"value": "C:\\[Users\\milop\\Documents\\Maestria_BI\\DWH]"
+		},
+		"AFS_101_properties_typeProperties_userId": {
+			"value": "Azure\\grupo26almacenamiento"
+		},
+		"FileServer151021_properties_typeProperties_host": {
+			"value": "C:\\Users\\milop\\Documents\\Maestria_BI\\DWH"
+		},
+		"FileServer151021_properties_typeProperties_userId": {
+			"value": "admin-grupo26"
+		},
+		"FileServer202_properties_typeProperties_host": {
+			"value": "C:\\Users\\milop\\Documents\\Maestria_BI\\DWH"
+		},
+		"FileServer202_properties_typeProperties_userId": {
+			"value": "milop"
+		},
+		"GitHub101_properties_typeProperties_username": {
+			"value": "mlopezr95984"
+		},
+		"GitHubBanmaket_properties_typeProperties_url": {
+			"value": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"GitHubBanmaket_properties_typeProperties_userName": {
+			"value": "admin_gr26"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"value": "admin-grupo26"
+		},
+		"HttpServer2_properties_typeProperties_url": {
+			"value": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"HttpServer2_properties_typeProperties_userName": {
+			"value": "admin-grupo26"
+		},
+		"HttpServer3_properties_typeProperties_url": {
+			"value": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"HttpServer4_properties_typeProperties_url": {
+			"value": "https://github.com/mlopezr95984/BanMarket/blob/main/li_customer_clientes.csv"
+		},
+		"HttpServer4_properties_typeProperties_userName": {
+			"value": "admin-grupo26"
+		},
+		"Web1_properties_typeProperties_url": {
+			"value": "https://github.com/mlopezr95984/BanMarket/blob/main/li_customer_clientes.csv"
+		}
+	}
+}

@@ -1,0 +1,265 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Group26"
+		},
+		"AFS_101_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AFS_101'"
+		},
+		"FileServer151021_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer151021'"
+		},
+		"FileServer202_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer202'"
+		},
+		"GitHub101_credential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'credential' of 'GitHub101'"
+		},
+		"GitHubBanmaket_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'GitHubBanmaket'"
+		},
+		"HttpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer1'"
+		},
+		"HttpServer2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer2'"
+		},
+		"HttpServer4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer4'"
+		},
+		"Master_BI_EDWH_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Master_BI_EDWH'"
+		},
+		"SQLDBGrupo26_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQLDBGrupo26'"
+		},
+		"linkedService202_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService202'"
+		},
+		"linkedService203_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService203'"
+		},
+		"AFS_101_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\[Users\\milop\\Documents\\Maestria_BI\\DWH]"
+		},
+		"AFS_101_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "Azure\\grupo26almacenamiento"
+		},
+		"FileServer151021_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\milop\\Documents\\Maestria_BI\\DWH"
+		},
+		"FileServer151021_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "admin-grupo26"
+		},
+		"FileServer202_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\milop\\Documents\\Maestria_BI\\DWH"
+		},
+		"FileServer202_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "milop"
+		},
+		"GitHub101_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "mlopezr95984"
+		},
+		"GitHubBanmaket_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"GitHubBanmaket_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin_gr26"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin-grupo26"
+		},
+		"HttpServer2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"HttpServer2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin-grupo26"
+		},
+		"HttpServer3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/mlopezr95984/BanMarket/blob/main"
+		},
+		"HttpServer4_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/mlopezr95984/BanMarket/blob/main/li_customer_clientes.csv"
+		},
+		"HttpServer4_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin-grupo26"
+		},
+		"Web1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/mlopezr95984/BanMarket/blob/main/li_customer_clientes.csv"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Group26_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AFS_101_password": {
+						"value": "[parameters('AFS_101_password')]"
+					},
+					"FileServer202_password": {
+						"value": "[parameters('FileServer202_password')]"
+					},
+					"GitHub101_credential": {
+						"value": "[parameters('GitHub101_credential')]"
+					},
+					"GitHubBanmaket_password": {
+						"value": "[parameters('GitHubBanmaket_password')]"
+					},
+					"HttpServer1_password": {
+						"value": "[parameters('HttpServer1_password')]"
+					},
+					"HttpServer2_password": {
+						"value": "[parameters('HttpServer2_password')]"
+					},
+					"HttpServer4_password": {
+						"value": "[parameters('HttpServer4_password')]"
+					},
+					"SQLDBGrupo26_connectionString": {
+						"value": "[parameters('SQLDBGrupo26_connectionString')]"
+					},
+					"linkedService202_connectionString": {
+						"value": "[parameters('linkedService202_connectionString')]"
+					},
+					"linkedService203_connectionString": {
+						"value": "[parameters('linkedService203_connectionString')]"
+					},
+					"FileServer151021_password": {
+						"value": "[parameters('FileServer151021_password')]"
+					},
+					"AFS_101_properties_typeProperties_host": {
+						"value": "[parameters('AFS_101_properties_typeProperties_host')]"
+					},
+					"AFS_101_properties_typeProperties_userId": {
+						"value": "[parameters('AFS_101_properties_typeProperties_userId')]"
+					},
+					"FileServer202_properties_typeProperties_host": {
+						"value": "[parameters('FileServer202_properties_typeProperties_host')]"
+					},
+					"FileServer202_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer202_properties_typeProperties_userId')]"
+					},
+					"GitHub101_properties_typeProperties_username": {
+						"value": "[parameters('GitHub101_properties_typeProperties_username')]"
+					},
+					"GitHubBanmaket_properties_typeProperties_url": {
+						"value": "[parameters('GitHubBanmaket_properties_typeProperties_url')]"
+					},
+					"GitHubBanmaket_properties_typeProperties_userName": {
+						"value": "[parameters('GitHubBanmaket_properties_typeProperties_userName')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
+					},
+					"HttpServer2_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer2_properties_typeProperties_url')]"
+					},
+					"HttpServer2_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer2_properties_typeProperties_userName')]"
+					},
+					"HttpServer3_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer3_properties_typeProperties_url')]"
+					},
+					"HttpServer4_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer4_properties_typeProperties_url')]"
+					},
+					"HttpServer4_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer4_properties_typeProperties_userName')]"
+					},
+					"Web1_properties_typeProperties_url": {
+						"value": "[parameters('Web1_properties_typeProperties_url')]"
+					},
+					"FileServer151021_properties_typeProperties_host": {
+						"value": "[parameters('FileServer151021_properties_typeProperties_host')]"
+					},
+					"FileServer151021_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer151021_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "Group26_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Master_BI_EDWH_connectionString": {
+						"value": "[parameters('Master_BI_EDWH_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Group26_ArmTemplate_0')]"
+			]
+		}
+	]
+}
