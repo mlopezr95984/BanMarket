@@ -40,75 +40,8 @@
 						"type": "AzureSqlSink",
 						"tableOption": "autoCreate"
 					},
-					"enableStaging": false,
-					"validateDataConsistency": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "Cliente ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Cliente ID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Nombre",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Nombre",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Apellido",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Apellido",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "Segmento",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Segmento",
-									"type": "String"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "SourceDataset_hkd",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DestinationDataset_hkd",
-						"type": "DatasetReference"
-					}
-				]
+					"enableStaging": false
+				}
 			}
 		],
 		"annotations": []
