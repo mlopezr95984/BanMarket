@@ -12,8 +12,9 @@
 				"type": "FileServerLocation",
 				"fileName": "DIM_Clientes151021n.csv"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
