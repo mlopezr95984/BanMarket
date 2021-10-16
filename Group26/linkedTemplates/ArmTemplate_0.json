@@ -491,12 +491,12 @@
 					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
 				},
 				"connectVia": {
-					"referenceName": "AutoResolveIntegrationRuntime",
+					"referenceName": "integrationRuntime3",
 					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime3')]"
 			]
 		},
 		{
